@@ -1,0 +1,90 @@
+This is your command line, a safe place to practice & complete the scenario
+
+$ git log --oneline
+ESC[33m1a5c915ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmasterESC[mESC[33m)ESC[m Final
+ESC[33m170acd7ESC[m New Item
+ESC[33mb6eab55ESC[m Initial comit of the list
+$ git rebase --interactive --root
+[detached HEAD eeea61c] Initial commit of the list
+ Date: Thu Nov 10 11:02:23 2022 +0000
+ 1 file changed, 5 insertions(+)
+ create mode 100644 list.html
+Successfully rebased and updated refs/heads/master.
+$ git log --oneline
+ESC[33m5fd3f16ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmasterESC[mESC[33m)ESC[m Final
+ESC[33m48e6e68ESC[m New Item
+ESC[33meeea61cESC[m Initial commit of the list
+$ git rebase --interactive HEAD~8
+[detached HEAD 9960815] TODO
+ Date: Thu Nov 10 11:07:28 2022 +0000
+ 1 file changed, 8 insertions(+)
+ create mode 100644 TODO
+Successfully rebased and updated refs/heads/master.
+$ git log --oneline
+ESC[33m9960815ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmasterESC[mESC[33m)ESC[m TODO
+ESC[33m5fd3f16ESC[m Final Item
+ESC[33m48e6e68ESC[m New Item
+ESC[33meeea61cESC[m Initial commit of the list
+$ git rebase --interactive HEAD~2
+Successfully rebased and updated refs/heads/master.
+$ git log --oneline
+ESC[33mf2633e3ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmasterESC[mESC[33m)ESC[m Addin
+ESC[33mc833235ESC[m Adding File 1
+ESC[33m9960815ESC[m TODO
+ESC[33m5fd3f16ESC[m Final Item
+ESC[33m48e6e68ESC[m New Item
+ESC[33meeea61cESC[m Initial commit of the list
+$ git log --oneline
+ESC[33m1c7f398ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmasterESC[mESC[33m)ESC[m Addin
+ESC[33mf2633e3ESC[m Adding File 2
+ESC[33mc833235ESC[m Adding File 1
+ESC[33m9960815ESC[m TODO
+ESC[33m5fd3f16ESC[m Final Item
+ESC[33m48e6e68ESC[m New Item
+ESC[33meeea61cESC[m Initial commit of the list
+$ ls
+file1.txt  file2.txt  file3.txt  file4.txt  list.html  TODO
+$ git rebase --interactive HEAD~1
+Successfully rebased and updated refs/heads/master.
+$ git reset HEAD^
+$ git rebase --interactive HEAD~1
+Successfully rebased and updated refs/heads/master.
+$ git add file3.txt
+$ git commit -m "File3.txt"
+[master d26900e] File3.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file3.txt
+$ git add file4.txt
+$ git commit -m "File4.txt"
+[master c36b4d4] File4.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file4.txt
+$ git rebase --interactive HEAD~1
+Successfully rebased and updated refs/heads/master.
+$ git rebase --continue
+No rebase in progress?
+$ git log --online
+fatal: unrecognized argument: --online
+$ git status
+On branch master
+nothing to commit, working tree clean
+$ git log --oneline
+ESC[33mc36b4d4ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmasterESC[mESC[33m)ESC[m File4
+ESC[33md26900eESC[m File3.txt
+ESC[33mf2633e3ESC[m Adding File 2
+ESC[33mc833235ESC[m Adding File 1
+ESC[33m9960815ESC[m TODO
+ESC[33m5fd3f16ESC[m Final Item
+ESC[33m48e6e68ESC[m New Item
+ESC[33meeea61cESC[m Initial commit of the list
+$ git rebase --continue
+No rebase in progress?
+$ git log --oneline
+ESC[33mc36b4d4ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmasterESC[mESC[33m)ESC[m File4
+ESC[33md26900eESC[m File3.txt
+ESC[33mf2633e3ESC[m Adding File 2
+ESC[33mc833235ESC[m Adding File 1
+ESC[33m9960815ESC[m TODO
+ESC[33m5fd3f16ESC[m Final Item
+ESC[33m48e6e68ESC[m New Item
+ESC[33meeea61cESC[m Initial commit of the list

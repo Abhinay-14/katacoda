@@ -1,0 +1,92 @@
+This is your command line, a safe place to practice & complete the scenario
+
+$ git branch
+* ESC[32mmasterESC[m
+$ git checkout firstbranch
+error: pathspec 'firstbranch' did not match any file(s) known to git.
+$ git branch firstbranch
+$ git checkout firstbranch
+Switched to branch 'firstbranch'
+$ git branch
+* ESC[32mfirstbranchESC[m
+  masterESC[m
+$ git branch -a
+* ESC[32mfirstbranchESC[m
+  masterESC[m
+$ git branch -a -v
+* ESC[32mfirstbranchESC[m 645e3d0 Commit on branch
+  master     ESC[m 2d5b04b First Commit on master
+$ git branch -va
+* ESC[32mfirstbranchESC[m 645e3d0 Commit on branch
+  master     ESC[m 2d5b04b First Commit on master
+$ git status
+On branch firstbranch
+nothing to commit, working tree clean
+$ git log
+ESC[33mcommit cdb29829ebc97ac708c14e06e5ab0487a44ee915ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 11:48:14 2022 +0000
+
+    Fix for Bug #58
+
+ESC[33mcommit 645e3d0f3c9d533754cc91aab4c2a194840fd5d7ESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 11:45:33 2022 +0000
+
+    Commit on branch
+
+ESC[33mcommit 2d5b04b7bfb964c3ff010c810edeb4714d15f8d2ESC[mESC[33m (ESC[mESC[1;32mmasterESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 11:35:18 2022 +0000
+
+    First Commit on master
+$ git checkout master
+Switched to branch 'master'
+$ git status
+On branch master
+nothing to commit, working tree clean
+$ git log
+ESC[33mcommit 2d5b04b7bfb964c3ff010c810edeb4714d15f8d2ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 11:35:18 2022 +0000
+
+    First Commit on master
+$ git merge firstbranch
+Updating 2d5b04b..cdb2982
+Fast-forward
+ new-file-6.txt | 1 +
+ staging.txt    | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 new-file-6.txt
+$ git push origin new_branch
+error: src refspec new_branch does not match any.
+error: failed to push some refs to '/s/remote-project/1'
+$ 
+$ git push firstbranch master
+fatal: 'firstbranch' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+$ git branch
+  firstbranchESC[m
+* ESC[32mmasterESC[m
+$ git push master firstbranch
+fatal: 'master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+$ git branch
+  firstbranchESC[m
+* ESC[32mmasterESC[m
+$ git push origin master
+Counting objects: 9, done.
+Delta compression using up to 48 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (9/9), 748 bytes | 748.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0)
+To /s/remote-project/1
+ * [new branch]      master -> master
+$ git branch -d firstbranch
+Deleted branch firstbranch (was cdb2982).

@@ -1,0 +1,111 @@
+This is your command line, a safe place to practice & complete the scenario
+
+$ git checkout
+$ git branch
+* ESC[32mmasterESC[m
+$ git show
+ESC[33mcommit 69c974d26fb2d6b7703488f812005fa615b8ca44ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:48:29 2022 +0000
+
+    New File
+
+ESC[1mdiff --git a/committed.txt b/committed.txtESC[m
+ESC[1mnew file mode 100644ESC[m
+ESC[1mindex 0000000..7c80d2bESC[m
+ESC[1m--- /dev/nullESC[m
+ESC[1m+++ b/committed.txtESC[m
+ESC[36m@@ -0,0 +1 @@ESC[m
+ESC[32m+ESC[mESC[32mCommitted FileESC[m
+$ git checkout .
+$ ls
+committed.txt  staging.txt
+$ git show
+ESC[33mcommit 69c974d26fb2d6b7703488f812005fa615b8ca44ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:48:29 2022 +0000
+
+    New File
+
+ESC[1mdiff --git a/committed.txt b/committed.txtESC[m
+ESC[1mnew file mode 100644ESC[m
+ESC[1mindex 0000000..7c80d2bESC[m
+ESC[1m--- /dev/nullESC[m
+ESC[1m+++ b/committed.txtESC[m
+ESC[36m@@ -0,0 +1 @@ESC[m
+ESC[32m+ESC[mESC[32mCommitted FileESC[m
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   staging.txt
+
+$ git reset .
+Unstaged changes after reset:
+M       staging.txt
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   staging.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   staging.txt
+
+$ git log --oneline
+ESC[33m69c974dESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmasterESC[mESC[33m)ESC[m New F
+ESC[33ma140dd9ESC[m Fixing Error
+ESC[33m4fbef55ESC[m First Commit
+$ git reset --hard HEAD
+HEAD is now at 69c974d New File
+$ git log --oneleine
+fatal: unrecognized argument: --oneleine
+$ git log --oneline
+ESC[33m69c974dESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmasterESC[mESC[33m)ESC[m New F
+ESC[33ma140dd9ESC[m Fixing Error
+ESC[33m4fbef55ESC[m First Commit
+$ git revert
+usage: git revert [<options>] <commit-ish>...
+   or: git revert <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add Signed-off-by:
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+$ git revert HEAD --no-edit
+[master 41d3b98] Revert "Commit To Revert"
+ Date: Thu Nov 10 12:53:26 2022 +0000
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git revert HEAD...HEAD~2
+[master d907a37] Revert "Revert "Commit To Revert""
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[master 6bf571e] Revert "Commit To Revert"
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git log --oneline
+ESC[33m6bf571eESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmasterESC[mESC[33m)ESC[m Rever
+ESC[33md907a37ESC[m Revert "Revert "Commit To Revert""
+ESC[33m41d3b98ESC[m Revert "Commit To Revert"
+ESC[33md3c9022ESC[m Commit To Revert
+ESC[33m69c974dESC[m New File
+ESC[33ma140dd9ESC[m Fixing Error
+ESC[33m4fbef55ESC[m First Commit

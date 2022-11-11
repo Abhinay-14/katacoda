@@ -1,0 +1,149 @@
+This is your command line, a safe place to practice & complete the scenario
+
+$ git diff HEAD~2 HEAD
+ESC[1mdiff --git a/list.html b/list.htmlESC[m
+ESC[1mindex 96e99d0..9f53aec 100644ESC[m
+ESC[1m--- a/list.htmlESC[m
+ESC[1m+++ b/list.htmlESC[m
+ESC[36m@@ -2,4 +2,6 @@ESC[m
+ <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>ESC[m
+ <li>Aliquam tincidunt mauris eu risus.</li>ESC[m
+ <li>Vestibulum auctor dapibus neque.</li>ESC[m
+ESC[32m+ESC[mESC[32m<li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod
+ESC[32m+ESC[mESC[32m<li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue
+ </ul>ESC[m
+$ git log --oneline
+ESC[33mdc18ca3ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[mESC[1;32mmasterESC[mESC[33m)ESC[m Final
+ESC[33m617d65aESC[m New Item
+ESC[33m3b9932fESC[m Initial commit of the list
+$ git log -p
+ESC[33mcommit dc18ca3a9566d0718031265fe975cd7767f50e73ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:39:04 2022 +0000
+
+    Final Item
+
+ESC[1mdiff --git a/list.html b/list.htmlESC[m
+ESC[1mindex def310d..9f53aec 100644ESC[m
+ESC[1m--- a/list.htmlESC[m
+ESC[1m+++ b/list.htmlESC[m
+ESC[36m@@ -3,4 +3,5 @@ESC[m
+ <li>Aliquam tincidunt mauris eu risus.</li>ESC[m
+ <li>Vestibulum auctor dapibus neque.</li>ESC[m
+ <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a.</l
+ESC[32m+ESC[mESC[32m<li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue
+ </ul>ESC[m
+
+ESC[33mcommit 617d65a34c9e7bdc8c02a00ada1ede84a693f610ESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:39:04 2022 +0000
+
+    New Item
+
+ESC[1mdiff --git a/list.html b/list.htmlESC[m
+ESC[1mindex 96e99d0..def310d 100644ESC[m
+ESC[1m--- a/list.htmlESC[m
+ESC[1m+++ b/list.htmlESC[m
+ESC[36m@@ -2,4 +2,5 @@ESC[m
+ <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>ESC[m
+ <li>Aliquam tincidunt mauris eu risus.</li>ESC[m
+ <li>Vestibulum auctor dapibus neque.</li>ESC[m
+ESC[32m+ESC[mESC[32m<li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod
+ </ul>ESC[m
+
+$ git log -p -n 2
+ESC[33mcommit dc18ca3a9566d0718031265fe975cd7767f50e73ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:39:04 2022 +0000
+
+    Final Item
+
+ESC[1mdiff --git a/list.html b/list.htmlESC[m
+ESC[1mindex def310d..9f53aec 100644ESC[m
+ESC[1m--- a/list.htmlESC[m
+ESC[1m+++ b/list.htmlESC[m
+ESC[36m@@ -3,4 +3,5 @@ESC[m
+ <li>Aliquam tincidunt mauris eu risus.</li>ESC[m
+ <li>Vestibulum auctor dapibus neque.</li>ESC[m
+ <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a.</l
+ESC[32m+ESC[mESC[32m<li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue
+ </ul>ESC[m
+
+ESC[33mcommit 617d65a34c9e7bdc8c02a00ada1ede84a693f610ESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:39:04 2022 +0000
+
+    New Item
+
+ESC[1mdiff --git a/list.html b/list.htmlESC[m
+ESC[1mindex 96e99d0..def310d 100644ESC[m
+ESC[1m--- a/list.htmlESC[m
+ESC[1m+++ b/list.htmlESC[m
+ESC[36m@@ -2,4 +2,5 @@ESC[m
+ <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>ESC[m
+ <li>Aliquam tincidunt mauris eu risus.</li>ESC[m
+ <li>Vestibulum auctor dapibus neque.</li>ESC[m
+ESC[32m+ESC[mESC[32m<li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod
+ </ul>ESC[m
+$ git log --grep="Initial"
+ESC[33mcommit 3b9932f126b8d1a72484ba605d53fb646921238bESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:39:04 2022 +0000
+
+    Initial commit of the list
+$ git log -m
+ESC[33mcommit dc18ca3a9566d0718031265fe975cd7767f50e73ESC[mESC[33m (ESC[mESC[1;36mHEAD -> ESC[
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:39:04 2022 +0000
+
+    Final Item
+
+ESC[33mcommit 617d65a34c9e7bdc8c02a00ada1ede84a693f610ESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:39:04 2022 +0000
+
+    New Item
+
+ESC[33mcommit 3b9932f126b8d1a72484ba605d53fb646921238bESC[m
+Author: Katacoda Scenario <scenario@katacoda.com>
+Date:   Thu Nov 10 12:39:04 2022 +0000
+
+    Initial commit of the list
+$ git bisect start
+$ git bisect bad
+$ git bisect good HEAD~5
+Bisecting: 2 revisions left to test after this (roughly 1 step)
+[dc18ca3a9566d0718031265fe975cd7767f50e73] Final Item
+$ cat list.html
+<ul>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+<li>Vestibulum auctor dapibus neque.</li>
+<li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a.</li>
+<li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</li>
+</ul>
+$ git bisect good
+Bisecting: 0 revisions left to test after this (roughly 1 step)
+[66c6d5c5a5f5ff91fd7820b200b319dffb4c2e6c] Adding Quisque
+$ cat list.html
+<ul>
+<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+<li>Aliquam tincidunt mauris eu risus.</li>
+<li>Vestibulum auctor dapibus neque.</li>
+<li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a.</li>
+<li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</li>
+Vestibulum auctor dapibus neque
+<li>Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed.</li>
+</ul>
+$ git bisect bad
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[43bd48df84722fcfa95d0a7f57922495b9f0e1d7] Adding Vestibulum
+$ git blame list.html
+^3b9932f (Katacoda Scenario 2022-11-10 12:39:04 +0000 1) <ul>
+^3b9932f (Katacoda Scenario 2022-11-10 12:39:04 +0000 2) <li>Lorem ipsum dolor sit amet, conse
+^3b9932f (Katacoda Scenario 2022-11-10 12:39:04 +0000 3) <li>Aliquam tincidunt mauris eu risus
+^3b9932f (Katacoda Scenario 2022-11-10 12:39:04 +0000 4) <li>Vestibulum auctor dapibus neque.<
+617d65a3 (Katacoda Scenario 2022-11-10 12:39:04 +0000 5) <li>Morbi in sem quis dui placerat or
+dc18ca3a (Katacoda Scenario 2022-11-10 12:39:04 +0000 6) <li>Praesent dapibus, neque id cursus
+43bd48df (Katacoda Scenario 2022-11-10 12:43:30 +0000 7) Vestibulum auctor dapibus neque
+^3b9932f (Katacoda Scenario 2022-11-10 12:39:04 +0000 8) </ul>
